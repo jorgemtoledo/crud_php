@@ -10,12 +10,14 @@
 </head>
 <body>
   <div class="banner">
-    <img src="assets/images/banner.png" alt="Banner Crud">
+    <a href="/proj_php/crud_php/pdo/">
+      <img src="assets/images/banner.png" alt="Banner Crud">
+    </a>
   </div>
 
   <div class="nav">
     <li><a href="cadastrar.php">Cadastrar</a></li>
     <li><a href="selecionar.php">Selecionar</a></li>
-    <li><a href="atualizar.php">Atualizar</a></li>
+    <li><a href="enquete.php">Enquete</a></li>
     <li><a href="deletar.php">Deletar</a></li>
   </div>

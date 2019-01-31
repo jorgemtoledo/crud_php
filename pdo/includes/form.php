@@ -9,6 +9,7 @@ include("Class/ClassCrud.php");
         $Fetch=$BFetch->fetch(PDO::FETCH_ASSOC);
         $id=$Fetch['id'];
         $nome=$Fetch['nome'];
+        $password=$Fetch['password'];
         $sexo=$Fetch['sexo'];
         $cidade=$Fetch['cidade'];
     }
@@ -18,6 +19,7 @@ include("Class/ClassCrud.php");
         $acao="Cadastrar";
         $id=0;
         $nome="";
+        $password="";
         $sexo="";
         $cidade="";
     }
@@ -29,16 +31,22 @@ include("Class/ClassCrud.php");
     <h1 class="center">Cadastro</h1>
 
     <form name="formCadastrar" id="formCadastrar" method="post" action="controllers/ControllerCadastrar.php">
-      <input type="hidden" id="acao" name="acao" value="<?php echo $Acao; ?>" >
+      <input type="hidden" id="acao" name="acao" value="<?php echo $acao; ?>" >
+      <input type="hidden" id="id" name="id" value="<?php echo $id; ?>" >
       <div class="formularioInput">
         Nome: <br>
-        <input type="text" id="nome" name="nome">
+        <input type="text" id="nome" name="nome" value="<?php echo $nome; ?>" >
+      </div>
+
+      <div class="formularioInput">
+        Senha: <br>
+        <input type="password" id="password" name="password" value="<?php echo $password; ?>" >
       </div>
 
       <div class="formularioInput">
         Sexo: <br>
         <select name="sexo" id="sexo">
-          <option value="">Selecione</option>
+          <option value="<?php echo $sexo; ?>"><?php echo $sexo; ?></option>
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>
@@ -46,11 +54,11 @@ include("Class/ClassCrud.php");
 
       <div class="formularioInput">
         Cidade: <br>
-        <input type="text" id="cidade" name="cidade">
+        <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>">
       </div>
 
       <div class="formularioInput formularioInput100 center">
-          <input type="submit" value="Cadastrar">
+          <input type="submit" value="<?php echo $acao; ?>">
       </div>
 
     </form>

@@ -1,8 +1,6 @@
 <?php
 include("ClassConexao.php");
-
 class ClassCrud extends ClassConexao{
-
   // Atributos
   private $crud;
   private $contador;
@@ -21,7 +19,6 @@ class ClassCrud extends ClassConexao{
       }
     }
     $this->crud->execute();
-
   }
 
   // Contador de parametros
@@ -46,7 +43,7 @@ class ClassCrud extends ClassConexao{
   #Deletar dados no DB
   public function deleteDB($tabela , $condicao , $parametros){
     $this->preparedStatements("delete from {$tabela} where {$condicao}" , $parametros);
-      return $this->crud;
+    return $this->crud;
   }
 
   #Atualização no banco de dados

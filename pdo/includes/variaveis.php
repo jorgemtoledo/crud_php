@@ -27,6 +27,15 @@ if(isset($_POST['nome']))
   $nome="";
 }
 
+if(isset($_POST['password']))
+{
+  $password=filter_input(INPUT_POST,'password',FILTER_SANITIZE_SPECIAL_CHARS);
+} elseif (isset($_GET['password'])){
+  $password=filter_input(INPUT_GET,'password',FILTER_SANITIZE_SPECIAL_CHARS);
+} else {
+  $password="";
+}
+
 if(isset($_POST['sexo'])){
   $sexo=filter_input(INPUT_POST,'sexo',FILTER_SANITIZE_SPECIAL_CHARS);
 } elseif (isset($_GET['sexo'])){
@@ -41,4 +50,12 @@ if(isset($_POST['cidade'])){
   $cidade=filter_input(INPUT_GET,'cidade',FILTER_SANITIZE_SPECIAL_CHARS);
 } else {
   $cidade="";
+}
+
+if(isset($_POST['radio'])){
+  $radio=filter_input(INPUT_POST,'radio',FILTER_SANITIZE_SPECIAL_CHARS);
+} elseif (isset($_GET['radio'])){
+  $radio=filter_input(INPUT_GET,'radio',FILTER_SANITIZE_SPECIAL_CHARS);
+} else {
+  $radio="";
 }
